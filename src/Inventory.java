@@ -25,7 +25,7 @@ public class Inventory {
             System.out.println("[1] Create new inventory item");
             System.out.println("[2] Remove item");
             System.out.println("[3] Update item quantity");
-            bumdsfadsf
+
 
             String option = scanner.nextLine();
             int optionNum = Integer.valueOf(option);
