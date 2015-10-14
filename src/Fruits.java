@@ -7,7 +7,4 @@ public class Fruits extends InventoryItem{
         this.quantity = quantity;
         category = "Fruits";
     }
-
-
-
 }

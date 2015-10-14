@@ -5,12 +5,8 @@ public class InventoryItem {
     String item;
     int quantity;
     String category;
-
     public InventoryItem(){
-
     }
-
-
     /** public InventoryItem(String item, int quantity, String category){
         this.item = item;
         this.quantity = quantity;
