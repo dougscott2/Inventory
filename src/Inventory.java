@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 /**
  * Created by DrScott on 10/12/15.
@@ -14,8 +15,27 @@ public class Inventory {
     }
 
     public static void main(String[] args) throws Exception{  //that sweet sweet main class
+        HashMap<String, String> accounts = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
         ArrayList<InventoryItem> inventory = new ArrayList();
+        accounts.put("Doug", "1234");
+        while (true) {
+            System.out.println("Please login, enter name");
+            String name = scanner.nextLine();
+            if (!accounts.containsKey(name)) {
+                System.out.println("account not found!");
+                System.exit(0);
+            } else {
+                System.out.println("Enter password");
+                String password = scanner.nextLine();
+                if (!password.equals(accounts.get(name))) {
+                    System.out.println("Wrong password!");
+                    System.exit(0);
+                } else {
+                    break;
+                }
+            }
+        }
 
         while (true) {
             printInventory(inventory);
