@@ -12,6 +12,7 @@ public class Inventory {
             inventoryNum++;
         }
     }
+
     public static void main(String[] args) throws Exception{  //that sweet sweet main class
         Scanner scanner = new Scanner(System.in);
         ArrayList<InventoryItem> inventory = new ArrayList();
@@ -52,32 +53,24 @@ public class Inventory {
                 int newQuantity = Integer.valueOf(select);
                 list.quantity = newQuantity;
             }
+            else {
+                System.out.println("Invalid entry, bro");
+            }
         }
     }
-            static InventoryItem createItem(String item, int quantity, String category) throws Exception {
-
-                if (category.equals("Fruits")) {
+            static InventoryItem createItem(String item, int quantity, String category) {
+                if (category.equalsIgnoreCase("Fruits")) {
                     return new Fruits(item, quantity);
-                } else if (category.equals("Vegetable")) {
+                } else if (category.equalsIgnoreCase("Vegetable")) {
                     return new Vegetable(item, quantity);
-                } else if (category.equals("Meat")) {
+                } else if (category.equalsIgnoreCase("Meat")) {
                     return new Meat(item, quantity);
-                } else if (category.equals("Dairy")) {
+                } else if (category.equalsIgnoreCase("Dairy")) {
                     return new Dairy(item, quantity);
-                } else if (category.equals("Grain")) {
+                } else if (category.equalsIgnoreCase("Grain")) {
                     return new Grain(item, quantity);
                 } else {
-                    //throw new Exception("That doesn't exist");
                     return null;
-
                 }
-    }
+             }
 }
-
-
-
-
-
-
-
-
